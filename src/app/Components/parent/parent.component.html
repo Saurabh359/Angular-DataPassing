@@ -1,0 +1,49 @@
+<div class="main">
+    <div class="parent-box">
+        <div class="topic">
+            <h1>Parent Component</h1>
+        </div>
+        <div class="work">
+            <div class="case">
+                <div class="title">
+                    <h3>@Input</h3>
+                </div>
+                <div class="content">
+                    <input type="text" [(ngModel)]="data1">
+                </div>
+            </div>
+            <div class="case">
+                <div class="title">
+                    <h3>Observable- Subject</h3>
+                </div>
+                <div class="content">
+                    <input type="text" (input)="emittData2($event)">
+                </div>
+            </div>
+            <div class="case">
+                <div class="title">
+                    <h3>Event</h3>
+                </div>
+                <div class="content">
+                    <input type="text"  (input)="emittDataEvent()" #data2>
+                </div>
+            </div>
+            <div class="case">
+                <div class="title">
+                    <h3>Display - @Output</h3>
+                </div>
+                <div class="content">
+                    <p>Data - {{data3}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="child-box">
+        <div class="child">
+            <app-first-child [value1]="data1"></app-first-child>
+        </div>
+        <div class="child">
+            <app-sec-child (dataemitter)="getData($event)"></app-sec-child>
+        </div>
+    </div>
+</div>
