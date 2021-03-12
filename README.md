@@ -6,6 +6,8 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 	
 <img src="https://github.com/Saurabh359/Angular-DataPassing/tree/main/src/assets/temp.PNG" width="500">
 
+<img src="src\assets\temp.PNG" width="300">
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
