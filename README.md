@@ -4,6 +4,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 # Project Image 
 	
+![alt tag](https://github.com/Saurabh359/Angular-DataPassing/tree/main/src/assets/temp.PNG)
 
 ## Development server
 
