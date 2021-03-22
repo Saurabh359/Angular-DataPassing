@@ -1,0 +1,138 @@
+<div class="reactive-form">
+    <div class="form-container">
+        <h2>Reactive Form with Validation</h2>
+        <form (ngSubmit)="FormSubmit()" [formGroup]="registrationForm" validation="false">
+            <h3>Personal Details</h3>
+            <div class="Input-group" formGroupName="fullname">
+                <div class="Input-box">
+                    <label for="firstname">First Name</label>
+                    <input type="text" formControlName="firstname">
+                    <div *ngIf="isSubmit && !b.firstname.valid" class="errors">
+                        <span *ngIf="b.firstname.errors.required">*required</span>
+                        <span *ngIf="b.firstname.errors.pattern">*In-valid</span>
+                    </div>
+                </div>
+                <div class="Input-box">
+                    <label for="middlename">Middle Name</label>
+                    <input type="text" formControlName="middlename">
+                    <div *ngIf="isSubmit && !b.middlename.valid" class="errors">
+                        <span *ngIf="b.middlename.errors.pattern">*In-valid</span>
+                    </div>
+                </div>
+                <div class="Input-box">
+                    <label for="lastname">Last Name</label>
+                    <input type="text" formControlName="lastname">
+                    <div *ngIf="isSubmit && !b.lastname.valid" class="errors">
+                        <span *ngIf="b.lastname.errors.required">*required</span>
+                        <span *ngIf="b.lastname.errors.pattern">*In-valid</span>
+                    </div>
+                </div>
+            </div>
+            <div class="Input-group" formGroupName="securityDetail">
+                <div class="Input-box">
+                    <label for="mobile">Mobile</label>
+                    <input type="tel" formControlName="mobile">
+                    <div *ngIf="isSubmit && !c.mobile.valid" class="errors">
+                        <span *ngIf="c.mobile.errors.required">*required</span>
+                        <span *ngIf="c.mobile.errors.pattern">*In-valid</span>
+                    </div>
+                </div>
+                <div class="Input-box">
+                    <label for="email">Email</label>
+                    <input type="email" formControlName="email">
+                    <div *ngIf="isSubmit && !c.email.valid" class="errors">
+                        <span *ngIf="c.email.errors.required">*required</span>
+                        <span *ngIf="c.email.errors.invalidEmail">*In-valid</span>
+                    </div>
+                </div>
+                <div class="Input-box">
+                    <label for="password">Password</label>
+                    <input type="password" formControlName="password">
+                    <div *ngIf="isSubmit && !c.password.valid" class="errors">
+                        <span *ngIf="c.password.errors.required">*required</span>
+                    </div>
+                </div>
+            </div>
+            <h3>Current Address</h3>
+            <div class="Input-group" formGroupName="currentaddressDetail">
+                <div class="Input-box">
+                    <label for="address">Address</label>
+                    <input type="text" formControlName="address">
+                    <div *ngIf="isSubmit && !d.address.valid" class="errors">
+                        <span *ngIf="d.address.errors.required">*required</span>
+                    </div>
+                </div>
+                <div class="Input-box">
+                    <label for="city">City</label>
+                    <input type="text" formControlName="city">
+                    <div *ngIf="isSubmit && !d.city.valid" class="errors">
+                        <span *ngIf="d.city.errors.required">*required</span>
+                        <span *ngIf="d.city.errors.pattern">*In-valid</span>
+                    </div>
+                </div>
+                <div class="Input-box">
+                    <label for="state">State</label>
+                    <input type="text" formControlName="state">
+                    <div *ngIf="isSubmit && !d.state.valid" class="errors">
+                        <span *ngIf="d.state.errors.required">*required</span>
+                        <span *ngIf="d.state.errors.pattern">*In-valid</span>
+                    </div>
+                </div>
+                <div class="Input-box">
+                    <label for="country">Country</label>
+                    <input type="text" formControlName="country">
+                    <div *ngIf="isSubmit && !d.country.valid" class="errors">
+                        <span *ngIf="d.country.errors.required">*required</span>
+                        <span *ngIf="d.country.errors.pattern">*In-valid</span>
+                    </div>
+                </div>
+            </div>
+            <h3>Permanent Address</h3>
+            <div  class="Input-group">
+                <div class="Input-Checkbox">
+                    <label for="check">
+                        <input type="checkbox" name="check" (click)="AutoFill()">
+                        same as current address
+                    </label>
+                </div>
+            </div>
+            <div class="Input-group" formGroupName="permanentaddressDetail">
+                <div class="Input-box">
+                    <label for="address">Address</label>
+                    <input type="text" formControlName="address">
+                    <div *ngIf="isSubmit && !e.address.valid" class="errors">
+                        <span *ngIf="e.address.errors.required">*required</span>
+                    </div>
+                </div>
+                <div class="Input-box">
+                    <label for="city">City</label>
+                    <input type="text" formControlName="city">
+                    <div *ngIf="isSubmit && !e.city.valid" class="errors">
+                        <span *ngIf="e.city.errors.required">*required</span>
+                        <span *ngIf="e.city.errors.pattern">*In-valid</span>
+                    </div>
+                </div>
+                <div class="Input-box">
+                    <label for="state">State</label>
+                    <input type="text" formControlName="state">
+                    <div *ngIf="isSubmit && !e.state.valid" class="errors">
+                        <span *ngIf="e.state.errors.required">*required</span>
+                        <span *ngIf="e.state.errors.pattern">*In-valid</span>
+                    </div>
+                </div>
+                <div class="Input-box">
+                    <label for="country">Country</label>
+                    <input type="text" formControlName="country">
+                    <div *ngIf="isSubmit && !e.country.valid" class="errors">
+                        <span *ngIf="e.country.errors.required">*required</span>
+                        <span *ngIf="e.country.errors.pattern">*In-valid</span>
+                    </div>
+                </div>
+            </div>
+            <div class="control-group">
+                <input type="submit" value="Submit">
+                <input type="reset" value="Reset" (click)="Reset()">
+            </div>
+        </form>
+    </div>
+</div>
